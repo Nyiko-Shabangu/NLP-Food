@@ -1,0 +1,161 @@
+Intents for South African Food Ordering Chatbot
+===============================================
+
+This chatbot helps users order traditional South African foods, modify their orders, and track order status. It is designed for integration with Dialogflow and a FastAPI backend.
+
+Default Welcome Intent
+---------------------
+Text responses:
+- Hello, how can I help you? You can say "New Order" or "Track Order".
+- Good day! What can I do for you today? You can say "New Order" or "Track Order".
+- Greetings! How can I assist? You can say "New Order" or "Track Order".
+
+Default Fallback Intent
+-----------------------
+Text responses:
+- I didn't understand. You can say 'New Order' or 'Track Order'.
+- In a new order, please mention only items from our available menu: Bunny Chow, Boerewors Roll, Pap & Chakalaka, Bobotie, Vetkoek, Kota, Malva Pudding, Milk Tart, and Sosaties.
+- Also specify a quantity for each item, for example: "One bunny chow and 2 boerewors rolls".
+- If you want to track an order, please provide your order ID.
+
+Intent: new.order
+-----------------
+User utterances:
+- new order
+- Place new order
+- I want to order food
+- Start a new order
+- I’d like to order South African food
+
+Text responses:
+- Ok, starting a new order. You can say things like "I want two bunny chows and one milk tart". Make sure to specify a quantity for every food item! Our menu: Bunny Chow, Boerewors Roll, Pap & Chakalaka, Bobotie, Vetkoek, Kota, Malva Pudding, Milk Tart, and Sosaties.
+- Starting new order. Specify food items and quantities. For example, "I would like to order two bunny chows and one milk tart."
+- Please list the items and quantities you want to order.
+
+Intent: order.add - context: ongoing-order
+------------------------------------------
+User utterances:
+- Give me 2 bunny chows, one boerewors roll
+- I'd like to order two bunny chows, one boerewors roll, and 3 milk tarts, please.
+- Can you please get me two servings of pap & chakalaka, one bobotie, and one malva pudding?
+- Please prepare 2 vetkoek, along with one kota and 1 milk tart for me
+- 3 sosaties, 2 milk tarts, 1 bunny chow
+- Can I get 2 bunny chows, along with one boerewors roll and 1 milk tart?
+- I'll take 2 orders of bunny chow, one boerewors roll, and 1 milk tart, if you don't mind
+- I want 1 milk tart, 2 bunny chows and one kota, do it fast please
+- In addition, add 1 malva pudding and 2 sosaties
+- Moreover, include 2 milk tarts
+- Also, please give me 2 milk tarts
+- Additionally, I'd like 2 milk tarts.
+- 2 bunny chow and ok lets add one bobotie too
+- 3 bobotie
+- Oh yes, add one pap & chakalaka as well
+
+Text responses:
+- Added your items to the order. Do you want to add more?
+- So far you have: [order summary]. Anything else?
+- Your order has been updated. Would you like to add or remove anything?
+
+Intent: order.complete - context: ongoing-order
+-----------------------------------------------
+User utterances:
+- Nope
+- That's all I needed
+- Done ordering it
+- Place an order
+- Done
+- That's it
+- Complete my order
+
+Text responses:
+- Your order is complete! Here is your order ID: [order_id]. Would you like to track your order?
+- Thank you for ordering! Your order has been placed.
+- Order placed successfully. You can track your order using your order ID.
+
+Intent: order.remove - context: ongoing-order
+---------------------------------------------
+User utterances:
+- No pap & chakalaka and sosaties in my order. please remove.
+- Kindly take pap & chakalaka and sosaties off the order, please.
+- I'd like to exclude pap & chakalaka and sosaties, please
+- I no longer want the bobotie in my order, please remove it
+- Kindly exclude the bobotie from my order
+- I would like to remove the bunny chow from my order
+- Please take the bunny chow off my order
+- delete kota from my order
+- hey, please get rid of bobotie and sosaties
+- I don't want pap & chakalaka
+- remove bunny chow from my order
+- can you remove milk tart?
+- Remove vetkoek from my order
+
+Text responses:
+- Removed the specified items from your order. Anything else?
+- The items have been taken off your order. Would you like to add or remove more?
+- Your order is now: [order summary]. Anything else?
+
+Intent: track.order
+-------------------
+User utterances:
+- check the status of my order
+- track order
+- track existing order
+- Where is my order?
+- What is the status of my order?
+
+Text responses:
+- Definitely. What is your order id?
+- Sure. Please enter your order id.
+- Please provide your order ID to track your order.
+
+Intent: track.order - context: ongoing-tracking
+-----------------------------------------------
+User utterances:
+- how about 32
+- how about 40?
+- here it is - 63321
+- here you go: 123
+- here is my order number 675
+- id is 453
+- here is my order id # 341
+- 7890
+- My order id is 12345
+- Track order 6789
+
+Text responses:
+- The status for order [order_id] is: [order_status].
+- Your order [order_id] is currently: [order_status].
+- No order found with that ID. Please check and try again.
+
+Menu Reference
+--------------
+Available items:
+- Bunny Chow
+- Boerewors Roll
+- Pap & Chakalaka
+- Bobotie
+- Vetkoek
+- Kota
+- Malva Pudding
+- Milk Tart
+- Sosaties
+
+Instructions
+------------
+- Always specify quantities for each item.
+- Use your order ID to track or modify
+
+
+Entities
+--------
+@food_item
+- Bunny Chow
+- Boerewors Roll
+- Pap & Chakalaka
+- Bobotie
+- Vetkoek
+- Kota
+- Malva Pudding
+- Milk Tart
+- Sosaties
+
