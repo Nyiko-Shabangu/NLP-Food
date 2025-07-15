@@ -41,7 +41,7 @@ Available items:
 
 1. **Clone the repository**
    ```sh
-   git clone <repo-url>
+   git clone <https://github.com/ST10119175/NLP-Food-.git>
    cd NLP food
    ```
 
