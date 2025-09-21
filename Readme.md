@@ -2,6 +2,9 @@
 
 This project is a FastAPI backend for a Dialogflow-powered food ordering chatbot. Users can place, modify, and track orders for South African cuisine using natural language. The backend interacts with a MySQL database to store and retrieve order information.
 
+<img width="414" height="564" alt="image" src="https://github.com/user-attachments/assets/4e993ba7-326a-41e5-a6a7-7b8b36ad5642" />
+
+
 ---
 
 ## Features
