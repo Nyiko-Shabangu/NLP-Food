@@ -9,7 +9,7 @@ This project is a FastAPI backend for a Dialogflow-powered food ordering chatbot
 
 ## Features
 
-- **Add to Order:** Add South African food items and quantities to your order.
+- **Add to Order:** Add South African and Durban food items and quantities to your order.
 - **Remove from Order:** Remove items from your current order.
 - **Complete Order:** Finalize your order, save it to the database, and receive an order ID and total price.
 - **Track Order:** Check the status of your order using the order ID.
@@ -37,6 +37,8 @@ Available items:
 - Malva Pudding
 - Milk Tart
 - Sosaties
+- Biryani
+- Pizza
 
 ---
 
